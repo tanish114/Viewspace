@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: #05060a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* AURORA BACKGROUND */
+.aurora {
+    position: fixed;
+    inset: 0;
+    filter: blur(80px);
+    z-index: -1;
+}
+
+.aurora span {
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    border-radius: 50%;
+    animation: aurora 18s infinite alternate ease-in-out;
+}
+
+.aurora span:nth-child(1) {
+    background: rgba(80, 255, 220, 0.45);
+    top: -20%;
+    left: -10%;
+}
+
+.aurora span:nth-child(2) {
+    background: rgba(120, 120, 255, 0.45);
+    top: 20%;
+    right: -20%;
+    animation-duration: 22s;
+}
+
+.aurora span:nth-child(3) {
+    background: rgba(255, 120, 200, 0.45);
+    bottom: -20%;
+    left: 20%;
+    animation-duration: 26s;
+}
+
+@keyframes aurora {
+    0% { transform: translate(0,0) scale(1); }
+    50% { transform: translate(120px,-80px) scale(1.2); }
+    100% { transform: translate(-100px,100px) scale(1.1); }
+}
+
+/* CARD */
+.card {
+    width: 360px;
+    padding: 30px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(18px);
+    border-radius: 16px;
+    color: white;
+    text-align: center;
+    animation: fadeUp 1s ease;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+label {
+    display: block;
+    text-align: left;
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    margin-bottom: 16px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+    background: linear-gradient(135deg, #7cf3ff, #a78bfa);
+    cursor: pointer;
+}
+
+/* ❌ ERROR BOX WITH SAD EMOJI */
+.error-box {
+    background: rgba(255, 80, 80, 0.15);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 15px;
+    animation: shakeFade 0.9s ease;
+}
+
+.error-box p {
+    color: #ffb4b4;
+    font-size: 14px;
+}
+
+.emoji {
+    font-size: 40px;
+    animation: sadBounce 1.2s ease infinite;
+}
+
+/* SAD EMOJI ANIMATION */
+@keyframes sadBounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+    100% { transform: translateY(0); }
+}
+
+/* ERROR SHAKE */
+@keyframes shakeFade {
+    0% { opacity: 0; transform: translateX(-8px); }
+    50% { transform: translateX(8px); }
+    100% { opacity: 1; transform: translateX(0); }
+}

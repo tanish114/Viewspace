@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+<title>ViewSpace</title>
+{% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}" >
+<link rel="stylesheet" href="{% static 'css/contact.css' %}" >
+
+
+{% endblock css %}
+
+{% block content %}
+
+<div class="contact-page">
+
+    <!-- Hero Section -->
+    <section class="hero-banner">
+        <h1>Contact Us</h1>
+    </section>
+
+    <!-- Intro Paragraph -->
+    <section class="intro-text">
+        <p>
+            ViewSpace is dedicated to serving professionals in the informal science education community, such 
+            as museum exhibit developers and planetarium directors. If you are a professional in this 
+            community and have a comment, question, or request, then please let us know how we can help.
+        </p>
+    </section>
+
+    <!-- Form Section -->
+    <section class="form-container">
+        <h2>Get in touch</h2>
+        <p>Please complete the form below. Once received, someone will be in contact with you shortly.</p>
+
+        <form>
+            <label>Email Address *</label>
+            <input type="email" required>
+
+            <label>First Name</label>
+            <input type="text">
+
+            <label>Last Name</label>
+            <input type="text">
+
+            <label>Please specify your organization/institutional affiliation</label>
+            <input type="text">
+
+            <label>Message *</label>
+            <textarea rows="4" required></textarea>
+
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </section>
+
+    <!-- Support Section -->
+    <section class="support-section">
+        <h2>Customer Support</h2>
+        <p>
+            Many common issues are addressed in our <a href="#">"Setup and Usage Guide"</a> (also accessible 
+            from the "Resources" menu).
+        </p>
+        <p>
+            If your issue is still not addressed, please send an email to 
+            <a href="mailto:support@viewspace.org">support@viewspace.org</a>.
+        </p>
+    </section>
+
+    <!-- Address -->
+    <section class="address-section">
+        <h2>Address</h2>
+        <p>Space Telescope Science Institute<br>
+        3700 San Martin Drive<br>
+        Baltimore, MD 21218<br>
+        Email: info@viewspace.org</p>
+    </section>
+
+</div>
+
+{% endblock content %}
+

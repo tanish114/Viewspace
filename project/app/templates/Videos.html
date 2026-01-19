@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+<title>videos</title>
+{% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}" >
+<link rel="stylesheet" href="{% static 'css/video.css' %}" > 
+
+
+{% endblock css %}
+
+{% block content %}
+<div class="videos-page">
+
+    <!-- HERO SECTION -->
+    <div class="hero">
+        <h2>About the Videos</h2>
+    </div>
+
+    <!-- ABOUT TEXT -->
+    <section class="about-section">
+        <h3>Expand Your Universe with the ViewSpace Video Collection</h3>
+        <p>Developed by a team of scientists, educators, writers, and designers working closely with NASA missions...</p>
+        <p>The ViewSpace video library is open to anyone who wants to view individual videos...</p>
+
+        {% comment %} <div class="btn-row">
+            <a href="#" class="btn">Venue Login</a>
+            <a href="#" class="btn">Video Library</a>
+            <a href="#" class="btn">Request an Account</a>
+        </div> {% endcomment %}
+    </section>
+
+    <!-- PREVIEW SECTION -->
+    <section class="preview">
+        <h3>Preview the Video Collection</h3>
+        <p>This sampling provides a glimpse into the variety of engaging astronomy and Earth science...</p>
+    </section>
+
+    <!-- VIDEO GALLERY -->
+    <section class="video-gallery">
+        <div class="video-card">
+            <video src="https://res.cloudinary.com/ddpty45xw/video/upload/v1767456029/video1_fjhbhu.mp4" controls ></video>
+            <p>News from the Universe</p>
+        </div>
+
+        <div class="video-card">
+           <video src="https://res.cloudinary.com/ddpty45xw/video/upload/v1767456007/video2_uagiyy.mp4" controls ></video>
+            <p>EarthWatch</p>
+        </div>
+
+        <div class="video-card">
+            <video src="https://res.cloudinary.com/ddpty45xw/video/upload/v1767456064/video3_islyt8.mp4" controls ></video>
+            Short Features
+        </div>
+
+        <div class="video-card">
+            <video src="https://res.cloudinary.com/ddpty45xw/video/upload/v1767456082/video4_rfuoto.mp4" controls ></video>
+            In a Different Light
+        </div>
+    </section>
+
+    <!-- FEATURES TEXT -->
+    <section class="features">
+        <ul>
+            <li>Updates automatically with new content</li>
+            <li>Plays videos automatically with minimal staff effort</li>
+            <li>Includes a choice of astronomy and earth science playlists</li>
+            <li>Provides latest stories from NASA astrophysics</li>
+        </ul>
+    </section>
+
+   
+
+   
+
+</div>
+
+
+{% endblock content %}

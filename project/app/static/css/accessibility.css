@@ -1,0 +1,88 @@
+/* Scope ALL styling to prevent affecting navbar/footer */
+.accessibility-page * {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+/* HERO BANNER */
+.accessibility-page .hero-banner {
+    background: url(https://res.cloudinary.com/ddpty45xw/image/upload/v1767455839/accessibility_qyr8b9.jpg) center/cover no-repeat;
+    padding: clamp(60px, 10vw, 120px) 20px;
+    text-align: center;
+    color: white;
+}
+
+.accessibility-page .hero-banner h1 {
+    font-size: clamp(26px, 5vw, 40px);
+    font-weight: bold;
+}
+
+/* CONTENT BLOCK */
+.accessibility-page .content-block {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+    color: #222;
+    font-size: clamp(15px, 2vw, 18px);
+    line-height: 1.7;
+}
+
+/* HEADINGS */
+.accessibility-page h2 {
+    font-size: clamp(21px, 3.5vw, 28px);
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* LIST STYLING */
+.accessibility-page ul {
+    margin: 15px 0 20px 25px;
+    line-height: 1.8;
+}
+
+/* LINK STYLE */
+.accessibility-page a {
+    color: #0a7280;
+    font-weight: bold;
+}
+
+/* FORM */
+.accessibility-page form label {
+    display: block;
+    margin-top: 18px;
+    font-weight: bold;
+}
+
+.accessibility-page input,
+.accessibility-page textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    margin-top: 8px;
+    border-radius: 4px;
+    font-size: 15px;
+}
+
+.accessibility-page .submit-btn {
+    background: #0d6f76;
+    color: white;
+    border: none;
+    padding: 14px 40px;
+    margin-top: 25px;
+    border-radius: 4px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.accessibility-page .submit-btn:hover {
+    background: #0a555b;
+}
+
+/* MOBILE OPTIMIZATION */
+@media (max-width: 600px) {
+    .accessibility-page .submit-btn {
+        width: 100%;
+    }
+}

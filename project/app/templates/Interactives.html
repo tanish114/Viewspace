@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+<title>ViewSpace</title>
+{% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}" >
+<link rel="stylesheet" href="{% static 'css/interactives.css' %}" >
+
+
+{% endblock css %}
+
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrap">
+<header>
+<h1>Interactives Library</h1>
+</header>
+
+
+<nav class="tabs" aria-label="section tabs">
+<div class="tab active">Image Tours</div>
+<div class="tab">Image Sliders</div>
+</nav>
+
+
+<main>
+<section class="gallery" aria-label="image gallery">
+<!-- Replace src values with your images. Images provided here are placeholders. -->
+<article class="card">
+<img class="thumb" src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Cassiopeia A nebula">
+<div class="meta"><a href="#">Cassiopeia A</a></div>
+</article>
+
+
+<article class="card">
+<img class="thumb" src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Center of the Milky Way">
+<div class="meta"><a href="#">Center of the Milky Way Galaxy</a></div>
+</article>
+
+
+<article class="card">
+<img class="thumb" src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Herbig-Haro objects">
+<div class="meta"><a href="#">Herbig-Haro 46/47</a></div>
+</article>
+
+
+<article class="card">
+<img class="thumb" src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="The Whirlpool Galaxy">
+<div class="meta"><a href="#">The Whirlpool Galaxy</a></div>
+</article>
+</section>
+</main>
+</div>
+</body>
+</html>
+<script src="{% static 'js/interactive.js' %}"></script>
+
+{% endblock content %}

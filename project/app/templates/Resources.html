@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+<title>resource</title>
+{% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}" >
+<link rel="stylesheet" href="{% static 'css/resource.css' %}" >
+ <link rel="icon" href="https://res.cloudinary.com/ddpty45xw/image/upload/v1767455839/fevicon_cxcydc.png">
+
+
+{% endblock css %}
+
+{% block content %}
+<div class="hero">
+    <h1> Resources</h1>
+</div>
+
+<div class="museum-container">
+
+    <section class="intro">
+        <h2>Using ViewSpace in your Resources</h2>
+        <p>
+            ViewSpace videos and interactives are designed to be used easily for a variety of purposes within the
+            informal learning setting. ViewSpace can be incorporated into exhibits, facilitated activities, educational
+            programming, and staff professional development.
+        </p>
+        <img src="https://res.cloudinary.com/ddpty45xw/image/upload/v1767455868/resource2_yo7bjr.jpg"alt="" class="intro-img">
+    </section>
+
+
+    <section class="content-box">
+        <h3>Exhibit Space</h3>
+        <div class="content-flex">
+            <img src="https://res.cloudinary.com/ddpty45xw/image/upload/v1767455869/resource3_wn4ohb.jpg" alt="">
+            <ul>
+                <li>Use the <strong>ViewSpace collection</strong> as a stand-alone exhibit.</li>
+                <li>Incorporate astronomy and Earth science interactives.</li>
+                <li>Provide visitors access to full video library.</li>
+                <li>Use ViewSpace in lobbies, children's areas, cafes.</li>
+                <li>Support with banners and labels.</li>
+            </ul>
+        </div>
+    </section>
+
+
+    <section class="content-box">
+        <h3>Facilitated Activities</h3>
+        <div class="content-flex">
+            <img src="https://res.cloudinary.com/ddpty45xw/image/upload/v1767455870/resource4_nnaggu.jpg" alt="">
+            <ul>
+                <li>Use as interactive engagement resource.</li>
+                <li>Use for guided or independent learning tours.</li>
+                <li>Perfect for live presentations and exploration stations.</li>
+            </ul>
+        </div>
+    </section>
+
+
+    <section class="content-box">
+        <h3>Educational Programming</h3>
+        <div class="content-flex">
+            <img src="https://res.cloudinary.com/ddpty45xw/image/upload/v1767455870/resource5_uytvqb.jpg" alt="">
+            <ul>
+                <li>Useful for multiple age groups.</li>
+                <li>Provide teachers links for follow-up classroom usage.</li>
+                <li>Allow students to continue learning at home.</li>
+            </ul>
+        </div>
+    </section>
+
+
+    <section class="content-box">
+        <h3>Training and Professional Development</h3>
+        <div class="content-flex">
+            <img src="https://res.cloudinary.com/ddpty45xw/image/upload/v1767455870/resource6_khtey6.jpg" alt="">
+            <ul>
+                <li>Ideal for docent, intern, and educator training.</li>
+                <li>Encourage independent learning via resources.</li>
+                <li>Support workshop and staff development needs.</li>
+            </ul>
+        </div>
+    </section>
+
+    {% comment %} <section class="content-box">
+        <h3>Sharing</h3>
+        <p>All ViewSpace content is free and publicly available.</p>
+        <ul>
+            <li>Share on websites and digital platforms.</li>
+            <li>Use in promotional media.</li>
+            <li>Encourage sharing through hashtags and links.</li>
+            <li>Participate in learning community networks.</li>
+        </ul>
+    </section> {% endcomment %}
+
+    
+
+</div>
+
+
+
+{% endblock content %}

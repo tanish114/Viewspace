@@ -1,0 +1,178 @@
+
+:root{
+  --bg: #000000;
+  --card-bg: transparent; /* keep card transparent like screenshot */
+  --text: #ffffff;
+  --muted: #cfd8d8;
+  --accent: #55b99a; /* mint/teal button */
+  --accent-dark: #43a483;
+  --input-border: #fff;
+  --max-width: 420px;
+  font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+html,body{
+  height:100%;
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Page layout: center vertically & horizontally */
+.page{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:48px 20px;
+}
+
+/* Card that holds the form */
+.card{
+  width:100%;
+  max-width:var(--max-width);
+  text-align:center;
+}
+
+/* Title */
+.title{
+  margin:0 0 18px 0;
+  font-size:32px;
+  font-weight:700;
+  letter-spacing:0.5px;
+}
+
+/* Form */
+.login-form{
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+  align-items:stretch;
+  margin-top:6px;
+}
+
+/* Field label wrapper */
+.field{
+  text-align:left;
+  display:block;
+}
+
+/* small label text above inputs */
+.label-text{
+  display:block;
+  margin-bottom:6px;
+  color:var(--muted);
+  font-size:13px;
+}
+
+/* Inputs styling */
+.input{
+  width:100%;
+  padding:12px 14px;
+  font-size:15px;
+  background:transparent;
+  color:var(--text);
+  border:2px solid var(--input-border);
+  border-radius:2px;
+  outline:none;
+  transition:box-shadow .12s ease, border-color .12s ease;
+}
+
+/* reduce placeholder contrast */
+.input::placeholder{ color: rgba(255,255,255,0.35); }
+
+/* Focus styles */
+.input:focus{
+  border-color:var(--accent);
+  box-shadow:0 0 0 4px rgba(85,185,154,0.08);
+}
+
+Button 
+ .btn {
+  margin-top:4px;
+  padding:12px 18px;
+  font-size:15px;
+  font-weight:600;
+  background:var(--accent);
+  color:#062418;
+  border:none;
+  border-radius:2px;
+  cursor:pointer;
+  align-self:center;
+  width:60%;
+  max-width:280px;
+  transition:transform .06s ease, background .12s ease;
+}
+
+
+
+/* Button hover & active */
+.btn:hover{ background:var(--accent-dark); transform:translateY(-1px); }
+.btn:active{ transform:translateY(0); }
+
+/* Forgot password link */
+.forgot{
+  margin-top:10px;
+}
+.forgot-link{
+  color:var(--accent);
+  text-decoration:underline;
+  font-weight:600;
+  font-size:14px;
+}
+.success-msg {
+    text-align: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    font-size: 18px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #7CFF7A, #2EFF9B);
+    color: #003300;
+    font-weight: bold;
+    box-shadow: 0 0 20px rgba(46, 255, 155, 0.6);
+    animation: pop 0.6s ease;
+}
+
+@keyframes pop {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+
+/* .register{
+  margin-top:10px;
+}
+.register-link{
+  color:var(--accent);
+  text-decoration:underline;
+  font-weight:600;
+  font-size:14px;
+  
+}
+#b a{
+  color: white;
+} */
+
+/* Accessibility: focus visible for keyboard users */
+:focus-visible{
+  outline: 3px solid rgba(85,185,154,0.18);
+  outline-offset:2px;
+}
+
+/* Small screens adjustments */
+@media (max-width:420px){
+  :root{ --max-width: 360px; }
+  .title{ font-size:28px; }
+  .btn{ width:70%; }
+  .page{ padding:28px 16px; }
+}
+
+/* Very small screens */
+@media (max-width:360px){
+  .title{ font-size:24px; }
+  .btn{ width:100%; max-width:100%; }
+  .login-form{ gap:14px; }
+  .input{ padding:10px 12px; }
+}

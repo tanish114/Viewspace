@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+<title>ViewSpace</title>
+{% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}" >
+<link rel="stylesheet" href="{% static 'css/accessibility.css' %}" >
+
+{% endblock css %}
+
+{% block content %}
+<div class="accessibility-page">
+
+    <!-- Banner -->
+    <section class="hero-banner">
+        <h1>Accessibility Statement</h1>
+    </section>
+
+    <!-- Section: Intro -->
+    <section class="content-block">
+        <h2>A Universe for Everyone</h2>
+        <p>
+            The Space Telescope Science Institute is committed to making the world's
+            astronomical information accessible to all.
+        </p>
+
+        <p>
+            We approach this goal in many ways across our websites, sharing the latest
+            scientific discoveries, mission updates, and plans for the future with the
+            public and astronomy community through articles, images, videos, interactives,
+            and other resources.
+        </p>
+
+        <p>
+            Recognizing that our audience members come with different skills, interests,
+            and background knowledge, we produce a variety of resources to meet people
+            where they are. We recognize that these resources are only as good as an
+            individual’s ability to use and find them, so we place particular emphasis on
+            website accessibility.
+        </p>
+    </section>
+
+    <!-- Section: Bulleted List -->
+    <section class="content-block">
+        <h2>Building Multiple Paths</h2>
+        <p>
+            Many traditional web design techniques do not take into account the needs of all
+            users. As such, we are continuously improving the design of this website.
+        </p>
+
+        <ul>
+            <li>Manual evaluation of the website using automated tools</li>
+            <li>Analysis of user feedback</li>
+            <li>Working with outside expertise and accessibility specialists</li>
+            <li>Using principles that enhance clarity and improve experience</li>
+        </ul>
+    </section>
+
+    <!-- Section: Progress Link -->
+    <section class="content-block">
+        <h2>Follow Our Progress</h2>
+        <p>
+            To increase transparency and share our progress, we publish an annual report.
+            You can view it here:
+        </p>
+
+        <p><a href="#">ViewSpace.org Accessibility Conformance Report – June 2025</a></p>
+    </section>
+
+    <!-- Section: Form -->
+    <section class="content-block">
+        <h2>Help Us Reach More People</h2>
+        <p>
+            If you have comments or suggestions on accessibility, please use the form below.
+        </p>
+
+        <form>
+            <label>Email Address *</label>
+            <input type="email" required>
+
+            <label>First Name</label>
+            <input type="text">
+
+            <label>Last Name</label>
+            <input type="text">
+
+            <label>Please specify your organization/institutional affiliation</label>
+            <input type="text">
+
+            <label>Message *</label>
+            <textarea rows="4" required></textarea>
+
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </section>
+
+</div>
+{% endblock content %}

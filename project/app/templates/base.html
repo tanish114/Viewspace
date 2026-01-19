@@ -1,0 +1,108 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://res.cloudinary.com/ddpty45xw/image/upload/v1767455839/fevicon_cxcydc.png">
+  {% block title %}
+  
+  
+  {% endblock title %}
+
+  {% block css %}
+  
+  {% endblock css %}
+
+  <style>
+    .togg{
+        position: absolute;top:100px; background-color: white; display: none;
+    }
+     .togg1{
+        position: absolute;top:100px; background-color: white; display: none;
+    }
+  </style>
+</head>
+<body>
+
+    <nav class="vs-nav">
+    <div class="vs-logo">
+        <img src="https://res.cloudinary.com/ddpty45xw/image/upload/v1767455883/vlogo_n4gtec.svg" alt="Logo">
+    </div>
+
+    
+    <input type="checkbox" id="vs-menu-toggle">
+
+   
+    <label for="vs-menu-toggle" class="vs-hamburger">☰</label>
+
+    
+    <ul class="vs-menu">
+        <li><a href="{% url 'home' %}" id="a">Home</a></li>
+        <li><a href="{% url 'about_interactive' %}" >Interactives</a></li>
+        <li><a href="{% url 'Videos'%}">Videos</a></li>
+        <li><a href="{% url 'Resources' %}">Resources</a></li>
+        <li><a href="{% url 'new_Login' %}">Venue Login</a></li>
+    </ul>
+</nav>
+
+{% comment %} <div id="tog" class="togg">
+    <ul>
+        <li><a href="{% url 'about_interactive' %}">Image Tour Library</a></li>
+        <li><a href="">Image Slider Library</a></li>
+        <li><a href="">About The Interactives</a></li>
+        
+    </ul>
+</div> {% endcomment %}
+
+{% comment %} <div id="tog1" class="togg1">
+    <ul>
+        <li><a href="">Video Liberary</a></li>
+        <li><a href="">Video collection</a></li>
+        <li><a href="">About The Videos</a></li>
+        
+    </ul>
+</div> {% endcomment %}
+
+  
+    
+
+     
+{% block content %}
+
+
+{% endblock content %}
+    <footer id="footer">
+        <div>
+         <ul>
+            <li> <a href="{% url 'contact' %}" style="color: aqua;">Contact Us</a></li>
+            <li><a href="{% url 'terms_condition' %}" style="color: aqua;">Terms & Conditions</a></li>
+            <li><a href="{% url 'accessibility' %}" style="color: aqua;">Accessibility Statement</a></li>
+            <li>Site Map</li>
+         </ul>
+        </div>
+       <div >
+        <p class="para7">ViewSpace video content contains copyrighted material and should not be downloaded or used outside of this website.</p>
+       <p class="para8">This product is based upon work supported by NASA under award numbers NNX16AC65A and NNX15AB26G and contracts NAS5-26555 and NAS5-03127. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the National Aeronautics and Space Administration. </p>
+
+       <div >
+      
+       </div>
+    </footer>
+
+  
+
+    <script>
+        function fun1(){
+    let tog = document.querySelector('#tog')
+    tog.classList.toggle('togg')
+    }
+     function fun2(){
+    let tog = document.querySelector('#tog1')
+    tog.classList.toggle('togg1')
+    }
+
+
+    </script>
+</body>
+</html>

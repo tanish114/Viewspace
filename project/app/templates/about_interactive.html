@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+<title>About </title>
+{% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}" >
+<link rel="stylesheet" href="{% static 'css/about_interactive_sub.css' %}" >
+
+
+{% endblock css %}
+
+{% block content %}
+<body>
+   
+
+<div class="hero">
+    <h1>About the Interactives</h1>
+</div>
+
+<section class="content-section">
+    <h2>Expand Your Universe with ViewSpace Interactives</h2>
+    <p>
+        ViewSpace Interactives allow you to explore objects and materials from different perspectives,
+        and discover how we combine information to better understand the universe. These interactives
+        let you see newly forming stars hidden inside giant clouds of dust and gas, search for pulsars
+        in the remains of exploded stars, witness the effects of galaxy collisions, explore ways of
+        detecting and investigating planets orbiting distant stars, and more.
+    </p>
+</section>
+
+<section class="gallery-section">
+    <h3>Image Tours</h3>
+    <div class="image-grid">
+        <img src="https://res.cloudinary.com/ddpty45xw/image/upload/v1767455850/interactive_sub4_jkhyms.png" alt="">
+        <!-- <img src="https://via.placeholder.com/400x300" alt="">
+        <img src="https://via.placeholder.com/400x300" alt="">
+        <img src="https://via.placeholder.com/400x300" alt=""> -->
+    </div>
+    <button class="primary-btn">Explore Image Tours</button>
+
+    <p>
+        Image Tours offer a way to learn about the composition, processes, and evolution of different
+        parts of the universe, such as the center of our Milky Way galaxy.
+    </p>
+
+    <a class="learn-more" href="#">Learn how to use the Tours below</a>
+</section>
+
+
+<section class="gallery-section">
+    <h3>Image Sliders</h3>
+
+    <div class="image-grid">
+        <img src="https://res.cloudinary.com/ddpty45xw/image/upload/v1767455854/interactive_sub5_cifg1x.png" alt="">
+        <!-- <img src="https://via.placeholder.com/400x300" alt="">
+        <img src="https://via.placeholder.com/400x300" alt="">
+        <img src="https://via.placeholder.com/400x300" alt=""> -->
+    </div>
+
+    <button class="primary-btn">Explore Image Sliders</button>
+</section>
+
+
+<section class="content-section">
+    <h2>How to Use the Image Tours</h2>
+
+    <img class="full-width-img" src="https://res.cloudinary.com/ddpty45xw/image/upload/v1767455849/interactive_sub3_uhdrvg.png" alt="">
+
+    <a class="learn-more" href="#">→ Image Tours Visual Description</a>
+</section>
+
+
+<section class="content-section">
+    <h2>How to Use the Image Sliders</h2>
+
+    <p>
+        Select the Image Sliders tab within the Interactives Library page to access our interactive sliders.
+        Each topic includes a number of interactives, which are accessible by selecting different parts on
+        the main image. Learn how objects in space are made of and how they change over time.
+    </p>
+
+    <img class="full-width-img" src="https://res.cloudinary.com/ddpty45xw/image/upload/v1767455842/interactive_sub2_zg6vvg.png"  alt="">
+
+    <a class="learn-more" href="#">→ Image Sliders Visual Description</a>
+</section>
+
+
+<section class="content-section">
+    <h2>Interactive Apps</h2>
+
+    <p>
+        Museums, libraries, and other informal learning venues may want to consider installing our
+        ViewSpace Interactive Apps to set up an exhibit of interactive experiences. These provide
+        intuitive access to the Image Sliders or Image Tours on browsers navigating to other websites.
+    </p>
+
+    <p>
+        This video provides a look into the installation, configuration, and features of the ViewSpace
+        Interactive Sliders App. We are upgrading the two- sided installation method on the ViewSpace
+        Interactive Tour App. The Interactives Apps, applications supported by NASA’s Universe of
+        Learning program, provide access to both Interactives via ViewSpace. The apps are available on
+        desktops, Android devices, and iPads.
+    </p>
+
+    <p>Visit our Setup Guide for installation instructions.</p>
+ 
+    <video src="https://res.cloudinary.com/ddpty45xw/video/upload/v1767455985/video_avriwe.mp4" controls id="video" style="height: 450px; width: 100%; margin-top: 50px;" ></video>
+</section>
+
+    
+
+</body>
+{% endblock content %}
+

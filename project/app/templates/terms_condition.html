@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+<title>ViewSpace</title>
+{% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}" >
+<link rel="stylesheet" href="{% static 'css/terms.css' %}" >
+{% endblock css %}
+
+{% block content %}
+
+<div class="terms-page">
+
+    <!-- Hero Banner -->
+    <section class="hero-banner">
+        <h1>Terms and Conditions</h1>
+    </section>
+
+    <!-- Content Section -->
+    <section class="text-content">
+
+        <!-- Section Title -->
+        <div class="section-title">Copyright</div>
+
+        <p>
+            ViewSpace contains copyrighted material and the use of this material outside of this website is prohibited.
+            This product is based upon work supported by the National Aeronautics and Space Administration under award
+            numbers NNX16AC65A and NNX15AB26G and contracts NAS5-26555 and NAS5-03127.
+        </p>
+
+        <p>
+            STScI is not responsible for the content that is linked from our websites. As external content is out of our
+            control and may change over time, we reserve the right to omit or remove hyperlinks that no longer return a valid pathway.
+        </p>
+
+        <!-- New Section -->
+        <div class="section-title">Online Privacy Policy</div>
+
+        <h3>Information We Collect</h3>
+        <p>
+            In order to understand who uses our online resources and how they are used,
+            we use analytics tools and collect limited information. This may include IP address,
+            browser type, and how long you remain on specific pages. No personally identifiable
+            data is used to identify individual users.
+        </p>
+
+        <h3>Information You Supply</h3>
+        <p>
+            Some of our web pages offer forms for providing personal details such as name and email for support purposes.
+            Providing this information is optional.
+        </p>
+
+        <h3>Monitoring</h3>
+        <p>
+            Our system administrators may review server logs to ensure that our services are functioning correctly
+            and securely.
+        </p>
+
+        <h3>Email Subscriptions</h3>
+        <p>
+            If you subscribe to email updates, we may collect your name and email. You can unsubscribe at any time.
+        </p>
+
+        <h3>Links to External Sites</h3>
+        <p>
+            Our site may contain links to external resources. We are not responsible for those sites or how they use data.
+        </p>
+
+        <h3>Retention</h3>
+        <p>
+            Submitted data may be retained indefinitely unless deletion is requested.
+        </p>
+
+        <h3>Questions</h3>
+        <p>
+            For questions regarding our policy, please contact:<br>
+            <strong>outreach@stsci.edu</strong>
+        </p>
+
+        <p class="updated-date">Last reviewed: October 21, 2025</p>
+
+    </section>
+
+</div>
+
+{% endblock content %}

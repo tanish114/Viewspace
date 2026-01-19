@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+<title>Register</title>
+{% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/register.css' %}">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+{% endblock css %}
+
+{% block content %}
+
+<body id="form">
+
+
+
+<form action="{% url 'registerdata' %}"  enctype="multipart/form-data" method="POST">
+    {{x}} <br/>
+    {{pmsg}}
+    {{msg}}
+    {% csrf_token%}
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="username" value="{{ formdata.username }}" placeholder="Enter name" ><br>
+      {% if errors.username %}
+        <p style="color:red; font-size:14px;">{{ errors.username.0 }}</p>
+    {% endif %}
+   
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="useremail" value="{{ formdata.useremail }}" placeholder="Enter email"><br>
+      {% if errors.useremail %}
+        <p style="color:red; font-size:14px;">{{ errors.useremail.0 }}</p>
+    {% endif %}
+
+    <label for="age">age</label>
+    <input type="number" id="contact" name="userage"  value="{{ formdata.userage }}" min="10" max="100"><br>
+      {% if errors.userage %}
+        <p style="color:red; font-size:14px;">{{ errors.userage.0 }}</p>
+    {% endif %}
+
+   <label for="discription">discription</label>
+   <textarea name="discription" value="{{ formdata.discription }}" id=""></textarea> <br> 
+    {% if errors.discription %}
+        <p style="color:red; font-size:14px;">{{ errors.discription.0 }}</p>
+    {% endif %}
+
+    <label for="img">img</label>
+    <input type="file" id="file" value="{{ formdata.image }}" name="image" accept="img/*"><br>
+     {% if errors.image %}
+        <p style="color:red; font-size:14px;">{{ errors.image.0 }}</p>
+    {% endif %}
+
+     <label for="resume">resume</label>
+     <input type="file" id="file" name="resume" value="{{ formdata.resume }}" accept=".pdf, .doc, .docx, application/pdf, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document"><br>
+    {% if errors.resume %}
+        <p style="color:red; font-size:14px;">{{ errors.resume.0 }}</p>
+    {% endif %}
+
+   <label for="password">Password</label>
+   <input type="text" placeholder="enter password" name='password'> <br> 
+    {% if errors.password %}
+        <p style="color:red; font-size:14px;">{{ errors.password.0 }}</p>
+    {% endif %}
+
+      <label for="password">Confirm Password</label>
+   <input type="text" placeholder="enter password" name='cpassword'>
+   {% if errors.cpassword %}
+        <p style="color:red; font-size:14px;">{{ errors.cpassword.0 }}</p>
+    {% endif %}
+  
+    
+
+
+
+
+
+    <input type="submit" value="Submit">
+    
+  </form>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.rings.min.js"></script>
+<script>
+VANTA.RINGS({
+  el: "#form",
+  mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+  minHeight: 200.00,
+  minWidth: 200.00,
+  scale: 1.00,
+  scaleMobile: 1.00
+})
+</script>
+
+</body>
+
+{% endblock content %}

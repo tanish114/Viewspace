@@ -1,0 +1,59 @@
+{% comment %} {{msg2}}
+
+<form action="{% url 'new_pass' %}" method="post">
+    {% csrf_token %}
+
+    <label for="">enter otp from mail</label>
+    <input type="number" name="otp" id=""> <br><br>
+
+    <label for="">enter password</label>
+    <input type="text" name="new_pass" id=""> <br><br>
+
+    <label for="">confirm password</label>
+    <input type="text" name="new_cpass" id="">
+
+    <button>reset</button>
+    
+</form> {% endcomment %}
+
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reset Password</title>
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+     <link rel="icon" href="https://res.cloudinary.com/ddpty45xw/image/upload/v1767455839/fevicon_cxcydc.png">
+</head>
+<body>
+
+<div class="space-bg">
+    <div class="stars"></div>
+    <div class="stars2"></div>
+    <div class="stars3"></div>
+</div>
+
+<div class="reset-card">
+    <h2>🚀 Reset Password</h2>
+
+    {% if msg2 %}
+        <p class="error-msg">{{ msg2 }}</p>
+    {% endif %}
+
+    <form action="{% url 'new_pass' %}" method="post">
+        {% csrf_token %}
+
+        <label>Enter OTP</label>
+        <input type="number" name="otp" placeholder="6 digit OTP" required>
+
+        <label>New Password</label>
+        <input type="password" name="new_pass" placeholder="New password" required>
+
+        <label>Confirm Password</label>
+        <input type="password" name="new_cpass" placeholder="Confirm password" required>
+
+        <button type="submit">Reset Password</button>
+    </form>
+</div>
+
+</body>
+</html>

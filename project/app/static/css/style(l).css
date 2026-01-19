@@ -1,0 +1,736 @@
+ main{
+  margin: 0px;
+  padding: 0px;
+ 
+ }
+ 
+  main img{
+  width: 300px;
+ height: 70px; 
+ 
+  }
+  #main-section{
+    height: 100vh;
+    width: 100%;
+    
+    background-image: url(https://res.cloudinary.com/ddpty45xw/image/upload/v1767455857/main_xogfv1.png);
+    background-size: cover;
+    background-position: center;
+        display: flex;
+    justify-content: center;
+  }
+#z1{
+   text-decoration: none;
+   font-size: x-large;
+   color: aliceblue;
+   display: flex;
+   gap: 20px;
+   text-align: center;
+   justify-content: center;
+
+}
+
+  #p1{
+    height: 310px;
+    width: 100%;
+    background-color: black;
+    margin: 0px;
+    padding-top: 10px;
+  }
+
+  #p3{
+    text-align: center;
+    font-size: large;
+    color: white;
+    margin: 0px;
+    padding: 0px;
+  }
+
+
+
+  
+  
+  #p1 nav{
+    display: flex;
+    align-items: center;
+    padding-left: 200px;
+    margin-top: 50px;
+    display: flex;
+    gap: 20px;
+  }
+  .m1{
+   background-color: rgba(128, 128, 128, 0.384); 
+    height:200px;
+    width: 230px;
+    font-size: large;
+    
+
+  }
+    
+  .m1 .m1img{
+    width: 100%;
+    height: 70%;
+    background-image: url(https://res.cloudinary.com/ddpty45xw/image/upload/v1767455837/box-1_dc8ib9.png);
+    background-size: cover;
+    background-position: center;
+  }
+.m1 .m1text a {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+    text-decoration: none;
+    margin-top: 17px;
+  }
+
+
+  .m2{
+     
+     background-color: rgba(128, 128, 128, 0.384); 
+    height:200px;
+    width: 230px;
+    font-size: large;
+    
+  }
+
+   .m2 .m2img{
+    width: 100%;
+    height: 70%;
+    background-image: url(https://res.cloudinary.com/ddpty45xw/image/upload/v1767455838/box-2_tsdu1g.png);
+    background-size: cover;
+    background-position: center;
+  }
+.m2 .m2text a{
+    width: 100%;
+    height: 30%;
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+    text-decoration: none;
+    margin-top: 17px;
+  }
+
+  .m3{
+        background-color: rgba(128, 128, 128, 0.384); 
+    height:200px;
+    width: 230px;
+    font-size: large;
+  }
+  .m3 .m3img{
+    width: 100%;
+    height: 70%;
+    background-image: url(https://res.cloudinary.com/ddpty45xw/image/upload/v1767455838/box-3_prntjf.png);
+    background-size: cover;
+    background-position: center;
+  }
+.m3 .m3text a{
+    width: 100%;
+    height: 30%;
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+    text-decoration: none;
+    margin-top: 17px;
+  }
+
+
+
+  .m4{
+   background-color: rgba(128, 128, 128, 0.384); 
+    height:200px;
+    width: 230px;
+    font-size: large;
+  }
+  .m4 .m4img{
+    width: 100%;
+    height: 70%;
+    background-image: url(https://res.cloudinary.com/ddpty45xw/image/upload/v1767455838/box-4_gcokhp.png);
+    background-size: cover;
+    background-position: center;
+  }
+.m4 .m4text a{
+    width: 100%;
+    height: 30%;
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+    text-decoration: none;
+    margin-top: 17px;
+  }
+
+  #l1{
+  background-color: rgba(0, 0, 0, 0.897);
+  width: 100%;
+  height: 100%;
+    padding-top: 20px;
+     padding-left: 200px;
+    padding-right: 200px; 
+}
+#l1 ul {
+  color: aliceblue;
+text-align: center;
+display: flex;
+justify-content: space-evenly;
+list-style: none;
+text-decoration:underline;
+margin: 0px;
+    padding: 0px;
+}
+
+
+
+#l1 h1{
+  color: aliceblue;
+  text-align: center;
+  margin-top: 10px;
+  
+}
+
+.para1{
+  font-size: large;
+  color: aliceblue;
+  padding-top: 50px;
+  text-align: center;
+}
+
+#l1 video{
+  height: 500px;
+  width: 900px;
+  display: flex;
+  justify-content: center;
+  padding-left: 80px;
+  margin-top: 20px;
+}
+
+.para2{
+    font-size: large;
+  color: aliceblue;
+  padding-top: 50px;
+  text-align: center;
+}
+
+.p-heading{
+  color: aliceblue;
+  text-align: center;
+}
+
+.para3{
+    font-size: large;
+  color: aliceblue;
+  padding-top: 50px;
+  text-align: center;
+}
+
+.div-box{
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding-top: 50px;
+  padding-bottom: 250px;
+  
+}
+
+.box-1{
+    background-color: rgba(128, 128, 128, 0.384); 
+    height:250px;
+    width: 450px;
+    font-size: large;
+ 
+}
+.img-menu1{
+  width: 100%;
+    height: 100%;
+    background-image: url(https://res.cloudinary.com/ddpty45xw/image/upload/v1767455855/menu1_ktbswb.png);
+    background-size: cover;
+    background-position: center;
+}
+.text-menu1{
+   
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    color:aliceblue;
+    
+}
+
+.box-2{
+   background-color: rgba(128, 128, 128, 0.384); 
+    height:250px;
+    width: 450px;
+    font-size: large;
+    
+   
+}
+ .img-menu2{
+  width: 100%;
+    height: 100%;
+    background-image: url(https://res.cloudinary.com/ddpty45xw/image/upload/v1767455855/menu2_nr6yrl.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.text-menu2{
+   
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    color:aliceblue;
+   
+} 
+
+#square1 {
+  
+  border: 1px solid aqua;
+  margin-top: 10px;
+  margin-bottom: 50px;
+
+  
+}
+#square1 h1 {
+  color: aqua;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 25px;
+  text-decoration: underline;
+}
+
+
+.k1{
+  text-align: center;
+  color: white;
+}
+
+.k2{
+  font-size: 15px;
+  color: aliceblue;
+  margin-top: 100px;
+}
+ 
+.para4{
+   font-size: large;
+  color: aliceblue;
+  padding-top: 50px;
+  text-align: center;
+}
+
+#last-box{
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding-top: 50px;
+  padding-bottom: 250px;
+  
+}
+
+.last-b1{
+    background-color: rgba(128, 128, 128, 0.384); 
+    height:250px;
+    width: 450px;
+    font-size: large;
+ 
+}
+ .img-menu3{
+  width: 100%;
+    height: 100%;
+    background-image: url(https://res.cloudinary.com/ddpty45xw/image/upload/v1767455838/box-l1_gdwhtt.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-menu3{
+   
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    color:aliceblue;
+   
+} 
+.last-b2{
+    background-color: rgba(128, 128, 128, 0.384); 
+    height:250px;
+    width: 450px;
+    font-size: large;
+ 
+}
+ .img-menu4{
+  width: 100%;
+    height: 100%;
+    background-image: url(https://res.cloudinary.com/ddpty45xw/image/upload/v1767455840/box-l2_yddfuh.png);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-menu4{
+   
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    color:aliceblue;
+   
+}
+#square2{
+  
+  border: 1px solid aqua;
+  margin-top: -90px;
+  
+}
+
+#square2 h1 a{
+  color: aqua;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 25px;
+  text-decoration: underline;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.para5{
+   font-size: large;
+  color: aliceblue;
+  padding-top: 150px;
+  text-align: center;
+}
+.a1{
+  color: aqua;
+  font-size: large;
+}
+
+.para6{
+   font-size: large;
+  color: aliceblue;
+  padding-top: 10px;
+  padding-left: 100px;
+padding-bottom: 50px;
+}
+
+@media (max-width: 600px) {
+
+    main img {
+        width: 180px;
+        height: auto;
+    }
+
+    #main-section {
+        height: 60vh;
+        background-position: center;
+    }
+
+    #p1 nav {
+        flex-direction: column;
+        padding-left: 0;
+        margin-top: 20px;
+        gap: 10px;
+    }
+
+    .m1, .m2, .m3, .m4 {
+        width: 90%;
+        height: 180px;
+    }
+
+    .div-box,
+    #last-box {
+        flex-direction: column;
+        gap: 20px;
+        padding-bottom: 50px;
+    }
+
+    .box-1, .box-2,
+    .last-b1, .last-b2 {
+        width: 90%;
+        height: 200px;
+    }
+
+    #l1 {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    #l1 ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #l1 video {
+        width: 100%;
+        height: auto;
+        padding-left: 0;
+    }
+
+    .para6 {
+        padding-left: 20px;
+    }
+}
+/* ====== FIX: prevent #l1 UL overlapping image above ====== */
+/* Add this at the VERY BOTTOM of your CSS file */
+
+#l1 {
+  /* don't keep it locked to 100% of something — let it size to its content */
+  height: auto !important;
+  box-sizing: border-box !important;
+  padding-top: 32px !important;   /* pushes whole #l1 content down */
+  padding-bottom: 32px !important;
+  overflow: visible !important;   /* ensures content flows naturally */
+  clear: both !important;         /* ensure it's below previous floated elements */
+  position: relative !important;
+}
+
+/* keep the list centered but with safe spacing from top */
+#l1 ul {
+  margin-top: 0 !important;      /* we rely on #l1 padding-top now */
+  padding-top: 0 !important;
+  z-index: 2 !important;
+  position: relative !important;
+}
+
+/* If any previous element uses negative margins, ensure #l1 sits below it */
+#l1::before {
+  content: "";
+  display: block;
+  height: 8px;                   /* tiny spacer to avoid overlap on edge cases */
+}
+
+/* MOBILE: add extra top spacing so list doesn't sit on the image */
+@media (max-width: 600px) {
+  #l1 {
+    padding-top: 56px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  #l1 ul {
+    flex-direction: column !important;
+    gap: 10px !important;
+    align-items: center !important;
+  }
+}
+
+/* TABLET: medium spacing */
+@media (min-width: 601px) and (max-width: 1024px) {
+  #l1 {
+    padding-top: 44px !important;
+    padding-left: 36px !important;
+    padding-right: 36px !important;
+  }
+}
+
+
+
+/* ==============================
+   RESPONSIVE OVERRIDES 
+   ============================== */
+
+/* ---------- MOBILE: up to 600px ---------- */
+@media (max-width: 600px) {
+
+  /* main/logo */
+  main img {
+    width: 160px !important;
+    height: auto !important;
+  }
+
+  /* reduce large hero height so it doesn't dominate small screens */
+  #main-section {
+    height: 56vh !important;
+    background-position: center !important;
+    padding: 10px 0 !important;
+    display: flex;
+    align-items: center;
+  }
+
+  /* NAV boxes stack vertically and center */
+  #p1 nav {
+    flex-direction: column !important;
+    padding-left: 0 !important;
+    margin-top: 18px !important;
+    gap: 14px !important;
+    align-items: center !important;
+  }
+
+  .m1, .m2, .m3, .m4 {
+    width: 92% !important;
+    max-width: 420px !important;
+    height: 180px !important;
+    margin: 0 auto !important;
+  }
+
+  /* Make the image areas of the boxes scale */
+  .m1 .m1img,
+  .m2 .m2img,
+  .m3 .m3img,
+  .m4 .m4img {
+    height: calc(70% - 6px) !important;
+    background-size: cover !important;
+    background-position: center !important;
+  }
+
+  /* L1 section: remove huge left/right padding and make list vertical */
+  #l1 {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+  #l1 ul {
+    flex-direction: column !important;
+    gap: 10px !important;
+    align-items: center !important;
+  }
+
+  /* video -> fluid */
+  #l1 video {
+    width: 100% !important;
+    height: auto !important;
+    padding-left: 0 !important;
+    display: block !important;
+    margin: 18px auto !important;
+  }
+
+  /* Interactives big boxes stack */
+  .div-box,
+  #last-box {
+    flex-direction: column !important;
+    gap: 18px !important;
+    padding-bottom: 60px !important;
+    align-items: center !important;
+  }
+
+  .box-1, .box-2,
+  .last-b1, .last-b2 {
+    width: 94% !important;
+    max-width: 700px !important;
+    height: 220px !important;
+  }
+
+  /* Remove negative margins or large offsets that break mobile layout */
+  #square2 {
+    margin-top: 20px !important;
+  }
+
+  #square1 {
+    margin-top: 18px !important;
+  }
+
+  /* Text spacing adjustments */
+  .para6 { padding-left: 16px !important; padding-right: 16px !important; }
+  .k2 { margin-top: 30px !important; }
+
+  /* ensure no horizontal overflow from any fixed width element */
+  html, body { max-width: 100vw; overflow-x: hidden; }
+}
+
+/* ---------- TABLET: 601px to 1024px ---------- */
+@media (min-width: 601px) and (max-width: 1024px) {
+
+  main img {
+    width: 220px !important;
+    height: auto !important;
+  }
+
+  #main-section {
+    height: 65vh !important;
+    background-position: center !important;
+  }
+
+  /* Make nav two-column wrap layout */
+  #p1 nav {
+    flex-wrap: wrap !important;
+    padding-left: 40px !important;
+    gap: 20px !important;
+    justify-content: center !important;
+  }
+
+  .m1, .m2, .m3, .m4 {
+    width: 48% !important;
+    height: 200px !important;
+    margin: 0 !important;
+  }
+
+  /* Slightly reduce inner image heights for tablet */
+  .m1 .m1img,
+  .m2 .m2img,
+  .m3 .m3img,
+  .m4 .m4img {
+    height: 68% !important;
+  }
+
+  /* L1 paddings reduced to fit tablet */
+  #l1 {
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+  }
+  #l1 ul {
+    justify-content: space-around !important;
+    gap: 12px !important;
+  }
+
+  /* Make video fluid on tablet */
+  #l1 video {
+    width: 100% !important;
+    height: auto !important;
+    padding-left: 0 !important;
+    margin-top: 16px !important;
+  }
+
+  /* Div boxes become two-up */
+  .div-box,
+  #last-box {
+    flex-wrap: wrap !important;
+    gap: 26px !important;
+    padding-bottom: 120px !important;
+    justify-content: center !important;
+  }
+
+  .box-1, .box-2,
+  .last-b1, .last-b2 {
+    width: 48% !important;
+    height: 240px !important;
+  }
+
+  /* Keep square offsets reasonable */
+  #square2 { margin-top: 10px !important; }
+  #square1 { margin-top: 10px !important; }
+
+  /* avoid horizontal overflow */
+  html, body { max-width: 100vw; overflow-x: hidden; }
+}
+
+/* ---------- DESKTOP/LAPTOP: 1025px and up (preserve your desktop look) ---------- */
+@media (min-width: 1025px) {
+
+  /* Restore the original desktop sizes (explicit to ensure predictable behavior) */
+  main img { width: 300px !important; height: 70px !important; }
+
+  #main-section { height: 100vh !important; background-position: center; }
+
+  #p1 nav { display: flex !important; align-items: center !important; padding-left: 200px !important; gap: 20px !important; }
+
+  .m1, .m2, .m3, .m4 {
+    width: 230px !important;
+    height: 200px !important;
+    margin: 0 !important;
+  }
+
+  .box-1, .box-2, .last-b1, .last-b2 {
+    width: 450px !important;
+    height: 250px !important;
+  }
+
+  #l1 { padding-left: 200px !important; padding-right: 200px !important; }
+
+  #l1 video { width: 900px !important; height: 500px !important; padding-left: 80px !important; margin-top: 20px !important; }
+
+  /* ensure no accidental overflow */
+  html, body { max-width: 100%; overflow-x: visible; }
+}

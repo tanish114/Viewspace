@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+<title>home page</title>
+{% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}" >
+<link rel="stylesheet" href="{% static 'css/style(l).css' %}" >
+{% endblock css %}
+
+{% block content %}
+{{message}}
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <main> 
+        <div id="main-section">
+     <img src="https://res.cloudinary.com/ddpty45xw/image/upload/v1767455856/mid-1_nl8sfp.png" alt="none">
+     
+     </div>
+        
+    </main> 
+
+  <menu id="p1">
+        
+        <h2 id="p3">Explore the Universe with Interactives and Videos</h2>
+        <nav>
+        <div class="m1">
+            <div class="m1img"></div>
+            <div class="m1text">Image tours</div>
+ 
+
+        </div>
+        <div class="m2">
+            <div class="m2img"></div>
+            <div class="m2text">Image Slider</div>
+        </div>
+        <div class="m3">
+            <div class="m3img"></div>
+            <div class="m3text">Video library</div>
+        </div>
+        <div class="m4">
+            <div class="m4img"></div>
+            <div class="m4text">Video collection</div>
+        </div>
+
+        </nav>
+    </menu>
+
+     <menu id="l1">
+        <ul>
+            <li>OVERVIEW</li>
+            <li>COLLECTION</li>
+            <li>VENUES</li>        
+            <li>PARTNERS</li>
+        </ul>
+        <h1>What is ViewSpace?</h1>
+
+        <p class="para1">ViewSpace is a free, web-based collection of digital interactives and videos highlighting the latest developments in astronomy and Earth science.</p>
+         <video src="https://res.cloudinary.com/ddpty45xw/video/upload/v1767455985/video_avriwe.mp4" controls autoplay></video>
+       
+     <p class="para2">ViewSpace gives you the opportunity to explore our planet, solar system, galaxy, and universe. Provided free with the support of NASA, ViewSpace is developed by a team of scientists, educators, and communication specialists who collaborate to ensure that content is accurate, up-to-date, engaging, relevant, and accessible to a wide audience.</p>
+       <h1 class="p-heading">Interactives</h1>
+
+         <p class="para3">ViewSpace interactives allow you to explore objects and materials from different perspectives, discovering how we can combine information to better understand the universe.</p>  
+        
+       <div class="div-box">
+       
+       <div class="box-1">
+            <div class="img-menu1"></div>
+            <div class="text-menu1">Different forms of light: Explore visible and invisible wavelengths of light that help us understand features like the dusty brim of the Sombrero Galaxy roughly 30 million light-years away..</div>
+        </div>
+         <div class="box-2">
+            <div class="img-menu2"></div>
+            <div class="text-menu2">Hidden objects: Unveil invisible light to reveal hidden objects like the stars forming inside Mystic Mountain, a pillar of gas and dust 7,500 light-years from Earth.</div>
+         </div>
+         </div>
+
+       <div id="square1">
+        <h1> <a href="{% url 'about_interactive' %}" style="color: aqua;">Begin Your Journey with ViewSpace Interactives</a> </h1>
+       </div>
+        
+       <div id="box-3">
+        <h1 class="k1">Videos</h1>
+        <p
+        class="para4">ViewSpace videos tell the stories of the planets, stars, galaxies, and universe, giving viewers the opportunity to experience space Earth as seen with satellites and telescopes.</p>
+  
+         </div> 
+         
+         <div id="last-box">
+
+         <div class="last-b1">
+            <div class="img-menu3"></div>
+            <div class="text-menu3">Astronomy: Explore the sky with stories told through spectacular imagery from space telescopes.</div>
+        </div>
+         <div class="last-b2">
+            <div class="img-menu4"></div>
+            <div class="text-menu4">Earth science: Gain new perspectives on our home planet based on data gathered by Earth-orbiting satellites.</div>
+         </div>
+         </div>
+
+         <div id="square2">
+        <h1>Learn More about ViewSpace Videos</h1>
+       </div>
+
+    
+<p class="para5">ViewSpace is produced by the Office of Public Outreach at the <a href="" class="a1">Space Telescope Science Institute</a>  , in partnership with the NASA's Universe of Learning project and NASA's Earth Observing System, Hubble Space Telescope Project, and James Web Space Telescope Project. </p>
+    </menu>
+      
+
+ </body>
+ </html>
+
+{% endblock content %}

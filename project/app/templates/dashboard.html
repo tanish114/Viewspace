@@ -1,0 +1,113 @@
+{% load static %}
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{% static 'css/dashboard.css' %}">
+     <link rel="icon" href="https://res.cloudinary.com/ddpty45xw/image/upload/v1767455839/fevicon_cxcydc.png">
+</head>
+
+<body>
+
+<div class="cosmic-bg">
+    <div class="nebula"></div>
+    <div class="aurora"></div>
+    <div class="stars"></div>
+</div>
+
+<div class="card">
+    <h2>Welcome {{ username }} 👋</h2> <br>
+    {{success_msg}}
+
+    <div class="dashboard-row">
+
+        <!-- LEFT BUTTON BAR -->
+        <div class="left-panel">
+            <button class="side-btn" onclick="showSection('info')">My Info</button>
+            <button class="side-btn" onclick="showSection('upload')">Upload</button>
+            <a href="{% url 'logout' %}" class="side-btn" style="text-decoration:none;">Logout</a>
+            <button class="side-btn" > <a href="{% url 'show_data' %}"> Show Data</a></button>
+        </div>
+
+        
+        <!-- RIGHT CONTENT -->
+        <div class="right-panel">
+
+            <!-- MY INFO SECTION -->
+            <div id="infoBox" class="section-box">
+                {% if image %}
+                    <img src="{{ image.url }}" alt="Profile Image">
+                {% endif %}
+
+                <p><b>ID:</b> {{ id }}</p>
+                <p><b>Email:</b> {{ useremail }}</p>
+                <p><b>Age:</b> {{ userage }}</p>
+                <p><b>Description:</b> {{ discription }}</p>
+
+                {% if resume %}
+                    <p>
+                        <b>Resume:</b>
+                        <a href="{{ resume.url }}" target="_blank">View Resume</a>
+                    </p>
+                {% endif %}
+            </div>
+
+            <!-- UPLOAD / CRUD SECTION -->
+           <!-- UPLOAD / CRUD SECTION -->
+<div id="uploadBox" class="section-box">
+
+    <h3 style="color:#58a6ff; text-align:center;">Upload / Manage Data</h3>
+
+    <form action="{% url 'upload' %}" method="POST" class="upload-form" enctype="multipart/form-data">
+        {% csrf_token%}
+        <label>Name</label>
+        <input type="text" name="name" placeholder="Enter name">
+
+        <label>Age</label>
+        <input type="number" name="age" placeholder="Enter age">
+
+        <label>Email</label>
+        <input type="email" name="email" id="">
+    
+        <label>Photo</label>
+        <input type="file" name="photo" accept="image/*">
+
+        <label>Video</label>
+        <input type="file" name="video" accept="video/*">
+
+        <div class="upload-actions">
+            <button type="submit" class="save-btn">Save</button>
+        </div>
+
+    </form>
+
+</div>
+
+
+               <!-- future CRUD table goes here -->
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("infoBox").style.display = "none";
+    document.getElementById("uploadBox").style.display = "none";
+});
+
+function showSection(type) {
+    const info = document.getElementById("infoBox");
+    const upload = document.getElementById("uploadBox");
+
+    info.style.display = "none";
+    upload.style.display = "none";
+
+    if (type === "info") info.style.display = "block";
+    if (type === "upload") upload.style.display = "block";
+}
+</script>
+
+
+</body>
+</html>

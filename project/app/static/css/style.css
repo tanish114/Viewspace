@@ -1,0 +1,236 @@
+
+
+  *{
+   box-sizing: border-box;
+   margin: 0px;
+    padding: 0px;
+    
+   
+  }
+  
+ #check{
+  display: none;
+ }
+  img{
+    max-width: 100%;
+    display: block;
+    height: auto;
+  }
+
+  #navbar{
+   height: 60px;
+   box-sizing: border-box;
+ background-color: black;
+   display: flex;
+      justify-content: space-between; 
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+    
+    
+  }
+  
+
+  #navbar img{
+   height: 100px;
+   width: 230px;
+   padding-left: 30px;
+   
+   
+  }
+ #top {
+   display: flex;
+     color: white;
+     font-size: 20px;
+     list-style: none;
+     gap: 20px;
+     padding-right: 20px;
+     text-decoration: solid;
+     margin: 0px;
+    padding: 0px;
+  }
+  footer div{
+  color: aqua;
+  list-style: none;
+  width: 100%;
+  height: 100%;
+  background-color: black; 
+}
+
+  footer div ul{
+  display: flex;
+  list-style: none;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: large;
+  text-decoration: underline;
+  padding-top: 50px;
+ 
+  
+} 
+.para7{
+  color:aliceblue;
+  font-size: 17px;
+  padding-left: 250px;
+  padding-top: 40px;
+}
+
+.para8{
+ color: aliceblue;
+ margin-top: 20px;
+ padding-left: 80px;
+ padding-right: 80px;
+ font-size: 17px;
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+footer div ul:hover{
+  text-decoration: none;
+}
+
+
+#navbar {
+  height: 60px !important;
+  background: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 25px;
+}
+
+#navbar img {
+  width: 230px !important;
+  height: auto !important;
+  flex-shrink: 0;
+}
+
+/* Fix nav items layout */
+/* #z1 {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+} */
+
+/* Fix text size forever */
+/* #z1 a {
+  color: white;
+  font-size: 20px !important;
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 18px 5px; */
+/* ===================== NAVBAR ===================== */
+
+.vs-nav {
+    width: 100%;
+    background: black;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 25px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 100;
+}
+
+/* Logo */
+.vs-logo img {
+    height: 50px;
+    width: auto;
+}
+
+/* Menu list (Desktop default) */
+.vs-menu {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.vs-menu a {
+    color: white;
+    font-size: 19px;
+    text-decoration: none;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: 0.2s;
+}
+
+.vs-menu a:hover {
+    opacity: 0.7;
+}
+
+/* Hidden checkbox for toggle behavior */
+#vs-menu-toggle {
+    display: none;
+}
+
+/* Hamburger button hidden on desktop */
+.vs-hamburger {
+    display: none;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+}
+
+
+/* ===================== TABLET & MOBILE ===================== */
+@media (max-width: 900px) {
+
+    .vs-hamburger {
+        display: block;
+    }
+
+    /* Hide menu initially */
+    .vs-menu {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: black;
+        flex-direction: column;
+        align-items: center;
+        display: none;
+        padding: 20px 0;
+        gap: 20px;
+    }
+
+    /* When checkbox is checked, show menu */
+    #vs-menu-toggle:checked ~ .vs-menu {
+        display: flex;
+    }
+
+    .vs-menu a {
+        font-size: 20px;
+    }
+}
+
+ 
+#tog ul {
+  color: aliceblue;
+  background-color: black;
+  padding-left: 63%;
+  list-style-type: none;
+  text-decoration: underline;
+  font-size: large;
+}
+#tog ul a{
+  color: aliceblue;
+}
+
+#tog1 ul {
+  color: aliceblue;
+  background-color: black;
+  padding-left: 73%;
+  list-style-type: none;
+  text-decoration: underline;
+  font-size: large;
+}
+#tog1 ul a{
+  color: aliceblue;
+}

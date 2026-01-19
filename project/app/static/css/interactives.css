@@ -1,0 +1,135 @@
+
+
+*{box-sizing:border-box}
+
+#navbar {
+  width: 100% !important;
+  max-width: none !important;
+  height: 70px !important;
+  background: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0 !important;
+  position: relative;
+}
+
+.wrap{
+width:100%;
+max-width:var(--max-w);
+margin: auto;
+} 
+
+
+header{
+text-align:center;
+margin-bottom:18px;
+}
+header h1{
+margin:0 0 6px 0;
+font-weight:500;
+font-size:36px;
+letter-spacing:0.5px;
+}
+
+
+/* Tabs */
+.tabs{
+display:flex;
+gap:32px;
+align-items:flex-end;
+padding:8px 0 18px;
+border-bottom:1px solid #bbb;
+margin-bottom:24px;
+}
+.tab{
+padding:10px 6px 14px 6px;
+cursor:default;
+position:relative;
+font-weight:600;
+}
+.tab.active{
+color:var(--text);
+}
+/* active indicator */
+.tab.active::after{
+content:"";
+position:absolute;
+left:0; right:0; bottom:-10px;
+}
+#navbar a,
+#navbar li,
+#navbar span {
+  font-size: 20px !important;
+  flex-shrink: 0 !important;
+  white-space: nowrap !important;
+}
+
+/* FIX LOGO FROM SCALING */
+#navbar img {
+  width: 230px !important;
+  height: auto !important;
+  flex-shrink: 0 !important;
+}
+
+/* --- STOP NAVBAR FROM BEING AFFECTED BY .wrap --- */
+#navbar {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    position: relative !important;
+}
+
+/* Detach navbar from wrap container */
+.wrap #navbar {
+    max-width: 100% !important;
+    width: 100% !important;
+}
+/* --- FORCE NAVBAR SIZE AND SPACING --- */
+
+#navbar {
+    height: 60px !important;
+    min-height: 80px !important;
+    padding: 0 30px !important;
+    align-items: center !important;
+}
+
+#navbar a {
+    font-size: 20px !important;
+    padding: 20px 10px !important;
+    line-height: 1 !important;
+    display: flex;
+    align-items: center;
+}
+#navbar {
+  height: 80px !important;
+  background: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 25px;
+}
+
+#navbar img {
+  width: 230px !important;
+  height: auto !important;
+  flex-shrink: 0;
+}
+
+/* Fix nav items layout */
+#nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+/* Fix text size forever */
+#nav-links a {
+  color: white;
+  font-size: 18px !important;
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 18px 5px;
+}

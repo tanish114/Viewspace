@@ -1,0 +1,117 @@
+/* Prevent layout shift */
+html, body {
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+}
+
+/* HERO SECTION FULL WIDTH */
+.hero {
+    width: 100%;
+    background: url(https://res.cloudinary.com/ddpty45xw/image/upload/v1767455869/resource1_shchfg.jpg) center/cover no-repeat;
+    text-align: center;
+    padding: 120px 20px;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* MAIN PAGE WRAPPER */
+.museum-container {
+    width: 95%;
+    max-width: 1200px;
+    margin: auto;
+}
+/* .intro img{
+
+} */
+.intro, .content-box {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.intro p {
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.6;
+}
+
+.intro-img {
+    width: 100%;
+    max-width: 900px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* CONTENT SECTIONS */
+.content-flex {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.content-flex img {
+    width: 40%;
+    border-radius: 10px;
+}
+
+.content-flex ul {
+    text-align: left;
+    flex: 1;
+    line-height: 1.6;
+    list-style-type: none;
+}
+
+/* BUTTON GROUP */
+.button-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 40px 0;
+}
+
+.button-row button {
+    padding: 12px 25px;
+    background: #0b7fa5;
+    border: none;
+    font-size: 16px;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    min-width: 200px;
+}
+
+.button-row button:hover {
+    background: #065a77;
+}
+
+/* RESPONSIVE BREAKPOINTS */
+
+/* Tablet */
+@media (max-width: 900px) {
+    .content-flex {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .content-flex img {
+        width: 100%;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .button-row button {
+        width: 100%;
+    }
+}

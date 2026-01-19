@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+<title>venue_login</title>
+{% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}" >
+<link rel="stylesheet" href="{% static 'css/login.css' %}" >
+
+{% endblock css %}
+
+{% block content %}
+
+<body id="login">
+
+  <main class="page">
+    <div class="card">
+         {% if success_msg %}
+    <div class="success-msg">
+        {{ success_msg }}
+    </div>
+{% endif %}
+  
+      <h1 class="title">Log In</h1>
+            {{msg}}
+            {{y}}
+      <form class="login-form" action="{% url 'login' %}" method="post" >
+        {% csrf_token%}
+        <label class="field">
+          <span class="label-text">Email Address</span>
+          <input class="input" type="email" name="email" autocomplete="email" required placeholder="you@example.com" />
+        </label>
+
+        <label class="field">
+          <span class="label-text">Password</span>
+          <input class="input" type="password" name="password" autocomplete="current-password" required placeholder="••••••••" />
+        </label>
+         
+        <button class="btn" type="submit" >Log in</button>
+
+        <div class="forgot">
+          <a class="forgot-link" href="{% url 'otp' %}">Forgot password?</a>
+        </div>
+        
+        <div class="register" id="a">
+          <a class="register-link" href="{% url 'register' %}" id="b" style="color: var(--accent);">Register</a>
+        </div>
+
+     
+      </form>
+    </div>
+  </main>
+</body>
+</html>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
+<script>
+VANTA.GLOBE({
+  el: "#login",
+  mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+  minHeight: 200.00,
+  minWidth: 200.00,
+  scale: 1.00,
+  scaleMobile: 1.00
+})
+</script>
+{% endblock content %}

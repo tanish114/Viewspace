@@ -1,0 +1,67 @@
+/* Scope styling so navbar/footer remain untouched */
+.terms-page * {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+/* ----- HERO BANNER ----- */
+.terms-page .hero-banner {
+    background: url(https://res.cloudinary.com/ddpty45xw/image/upload/v1767455878/terms-conditions_od88zm.png) center/cover no-repeat;
+    padding: clamp(60px, 12vw, 120px) 20px;
+    text-align: center;
+    color: white;
+}
+
+.terms-page .hero-banner h1 {
+    font-size: clamp(26px, 5vw, 40px);
+    font-weight: bold;
+}
+
+/* ----- MAIN CONTENT ----- */
+.terms-page .text-content {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+    font-size: clamp(15px, 2.2vw, 18px);
+    line-height: 1.7;
+    color: #222;
+}
+
+/* Section Divider Titles */
+.terms-page .section-title {
+    font-size: clamp(20px, 3vw, 26px);
+    font-weight: bold;
+    text-align: center;
+    margin: 50px 0 25px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #ccc;
+}
+
+/* Subheadings */
+.terms-page h3 {
+    font-size: clamp(18px, 2.8vw, 22px);
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Paragraph spacing */
+.terms-page p {
+    margin-bottom: 18px;
+}
+
+/* Last review date formatting */
+.terms-page .updated-date {
+    margin-top: 35px;
+    font-style: italic;
+    text-align: center;
+    color: #444;
+}
+
+/* RESPONSIVE SPACING */
+@media (max-width: 600px) {
+    .terms-page .text-content {
+        margin: 20px auto;
+    }
+}

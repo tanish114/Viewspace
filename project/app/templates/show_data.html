@@ -1,0 +1,277 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <link rel="icon" href="https://res.cloudinary.com/ddpty45xw/image/upload/v1767455839/fevicon_cxcydc.png">
+    <title>Uploaded Data</title>
+
+<style>
+/* ===== RESET (SAFE) ===== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 40px 0;
+    background: #0d1117;
+    color: #e6edf3;
+    font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+/* ===== PAGE CONTAINER ===== */
+.container {
+    width: 95%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* ===== PAGE TITLE ===== */
+h2 {
+    text-align: center;
+    color: #58a6ff;
+    margin-bottom: 25px;
+}
+
+/* ================================================= */
+/* ================== TABLE ======================== */
+/* ================================================= */
+
+.table-wrapper {
+    background: #161b22;
+    border-radius: 12px;
+    padding: 15px;
+    overflow-x: auto;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.45);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+}
+
+thead {
+    background: #21262d;
+}
+
+th {
+    padding: 12px;
+    font-size: 14px;
+    color: #c9d1d9;
+    text-align: center;
+    border-bottom: 1px solid #30363d;
+}
+
+td {
+    padding: 12px;
+    font-size: 14px;
+    text-align: center;
+    border-bottom: 1px solid #21262d;
+}
+
+tbody tr:hover {
+    background: rgba(88, 166, 255, 0.06);
+}
+
+img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* ACTION BUTTONS */
+a.action {
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 13px;
+    border-radius: 6px;
+    color: #fff;
+    text-decoration: none;
+    margin: 0 3px;
+}
+
+a.edit {
+    background: #1f6feb;
+}
+
+a.delete {
+    background: #da3633;
+}
+
+a.edit:hover { background: #388bfd; }
+a.delete:hover { background: #f85149; }
+
+/* ================================================= */
+/* ================= EDIT FORM ===================== */
+/* ================================================= */
+
+.edit-form-wrapper {
+    margin-top: 40px;
+    padding: 30px;
+    background: #010409;
+    border-radius: 14px;
+    border: 1px solid #21262d;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+}
+
+.edit-form-wrapper h3 {
+    text-align: center;
+    color: #58a6ff;
+    margin-bottom: 25px;
+}
+
+/* FORM BODY */
+.edit-form-wrapper form {
+    max-width: 600px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.edit-form-wrapper input {
+    width: 100%;
+    padding: 12px 14px;
+    background: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    color: #e6edf3;
+    font-size: 14px;
+}
+
+.edit-form-wrapper label {
+    font-size: 13px;
+    color: #9da7b1;
+    margin-top: 6px;
+}
+
+/* FORM ACTIONS */
+.edit-form-actions {
+    margin-top: 18px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.edit-form-actions button {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 8px;
+    background: #1f6feb;
+    color: #fff;
+    cursor: pointer;
+}
+
+.edit-form-actions button:hover {
+    background: #388bfd;
+}
+
+.edit-form-actions a {
+    padding: 10px 24px;
+    border-radius: 8px;
+    background: #21262d;
+    color: #c9d1d9;
+    text-decoration: none;
+}
+
+.edit-form-actions a:hover {
+    background: #30363d;
+}
+</style>
+
+
+
+
+</head>
+<body>
+
+<div class="container">
+    <h2>Uploaded Data</h2>
+
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Email</th>
+                    <th>Photo</th>
+                    <th>Video</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for u in uploads %}
+                <tr>
+                    <td>{{ u.name }}</td>
+                    <td>{{ u.age }}</td>
+                    <td>{{ u.email }}</td>
+
+                    <td>
+                        {% if u.photo %}
+                            <img src="{{ u.photo.url }}" width="60" height="60">
+                        {% else %}
+                            —
+                        {% endif %}
+                    </td>
+
+                    <td>
+                        {% if u.video %}
+                            <a href="{{ u.video.url }}" target="_blank" class="action edit">View</a>
+                        {% else %}
+                            —
+                        {% endif %}
+                    </td>
+
+                    <td>
+                        <a href="{% url 'show_data' %}?edit={{ u.id }}" class="action edit">Edit</a>
+                         <a href="{% url 'delete_upload' u.id %}"
+                           class="action delete">
+                           Delete
+                        </a> 
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="6" class="empty">No data available</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+   {% if edit_obj %}
+<div class="edit-form-wrapper">
+    <h3>Edit Record</h3>
+
+    <form method="POST"
+          action="{% url 'update_upload' edit_obj.id %}"
+          enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <input type="text" name="name" value="{{ edit_obj.name }}" required>
+        <input type="number" name="age" value="{{ edit_obj.age }}" required>
+        <input type="email" name="email" value="{{ edit_obj.email }}" required>
+
+        <label>Change Photo</label>
+        <input type="file" name="photo">
+
+        <label>Change Video</label>
+        <input type="file" name="video">
+
+        <div class="edit-form-actions">
+            <button type="submit">Save Changes</button>
+            <a href="{% url 'show_data' %}">Cancel</a>
+        </div>
+    </form>
+</div>
+
+
+{% endif %}
+<br>
+<button><a href="{% url 'dashboard' %}"> Back To Dashboard</a></button>
+</body>
+</html>
