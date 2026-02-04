@@ -49,6 +49,12 @@ CLOUDINARY_STORAGE = {
     'API_SECRET': 'fNT2Vw9cv_7jcjmaZx4d0-8TdPw'
 }
 
+# Razorpay Test Keys (PLACEHOLDERS)
+RAZORPAY_KEY_ID = "rzp_test_S8tHIhlGPpSYt6"
+RAZORPAY_KEY_SECRET = "ZHxGzkEUHXKewiTOczuLJAlS"
+
+
+
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 MIDDLEWARE = [
@@ -100,6 +106,7 @@ DATABASES = {
 			'PORT': '3306',   
 }
 }
+
 
 
 # Password validation

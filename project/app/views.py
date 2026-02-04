@@ -8,6 +8,22 @@ from django.core.mail import send_mail
 from django.views.decorators.cache import never_cache
 from django.core.exceptions import ValidationError
 from .models import data
+import razorpay
+from django.conf import settings
+from django.views.decorators.csrf import csrf_exempt
+from django.http import HttpResponseBadRequest
+from django.conf import settings 
+RAZORPAY_KEY_ID = settings.RAZORPAY_KEY_ID
+RAZORPAY_KEY_SECRET = settings.RAZORPAY_KEY_SECRET
+import csv
+import json
+from django.http import HttpResponse
+from openpyxl import Workbook
+from reportlab.lib.pagesizes import A4
+from reportlab.pdfgen import canvas
+from django.http import HttpResponse
+from django.utils.timezone import now
+
 
 # Create your views here.
 def index(req):
@@ -247,18 +263,49 @@ def delete_upload(req,pk):
     upload.delete()
     return redirect('show_data')
 
+from django.db.models import Q
+
 def show_data(request):
     uploads = Upload.objects.all()
     edit_obj = None
 
+    # ---------- SEARCH ----------
+    query = request.GET.get('q')
+    if query:
+        uploads = uploads.filter(
+            Q(name__icontains=query) |
+            Q(email__icontains=query) |
+            Q(age__icontains=query)
+        )
+
+    # ---------- SORT ----------
+    sort = request.GET.get('sort')
+
+    if sort == "name_asc":
+        uploads = uploads.order_by("name")
+    elif sort == "name_desc":
+        uploads = uploads.order_by("-name")
+    elif sort == "age_asc":
+        uploads = uploads.order_by("age")
+    elif sort == "age_desc":
+        uploads = uploads.order_by("-age")
+    elif sort == "email_asc":
+        uploads = uploads.order_by("email")
+    elif sort == "email_desc":
+        uploads = uploads.order_by("-email")
+
+    # ---------- EDIT MODE ----------
     edit_id = request.GET.get('edit')
     if edit_id:
         edit_obj = Upload.objects.get(id=edit_id)
 
     return render(request, 'show_data.html', {
         'uploads': uploads,
-        'edit_obj': edit_obj
+        'edit_obj': edit_obj,
+        'query': query,
+        'sort': sort
     })
+
 
 
 def update_upload(request, pk):
@@ -277,3 +324,125 @@ def update_upload(request, pk):
 
         obj.save()
         return redirect('show_data')
+
+def create_payment(request):
+    client = razorpay.Client(
+        auth=(RAZORPAY_KEY_ID, RAZORPAY_KEY_SECRET)
+    )
+
+    amount = 50000  # ₹500 in paise (TEST AMOUNT)
+
+    order = client.order.create({
+        "amount": amount,
+        "currency": "INR",
+        "payment_capture": 1
+    })
+
+    context = {
+        "order_id": order["id"],
+        "razorpay_key": RAZORPAY_KEY_ID,
+        "amount": amount,
+        "currency": "INR"
+    }
+
+    return render(request, "payment.html", context)
+
+@csrf_exempt
+def payment_success(request):
+    if request.method == "POST":
+        client = razorpay.Client(
+            auth=(RAZORPAY_KEY_ID, RAZORPAY_KEY_SECRET)
+        )
+
+        try:
+            client.utility.verify_payment_signature({
+                'razorpay_order_id': request.POST.get('razorpay_order_id'),
+                'razorpay_payment_id': request.POST.get('razorpay_payment_id'),
+                'razorpay_signature': request.POST.get('razorpay_signature')
+            })
+            request.session["invoice_data"] = {
+                "payment_id": request.POST.get("razorpay_payment_id"),
+                "order_id": request.POST.get("razorpay_order_id"),
+                "amount": 500,  # must match Razorpay amount
+            }
+            request.session["payment_done"] = True
+            request.session.modified = True
+            return redirect("dashboard") 
+
+
+
+            return render(request, "payment_success.html")
+
+        except razorpay.errors.SignatureVerificationError:
+            return HttpResponseBadRequest("Payment verification failed")
+
+
+def download_data(request, file_type):
+    uploads = Upload.objects.all()
+
+    # -------- CSV --------
+    if file_type == "csv":
+        response = HttpResponse(content_type="text/csv")
+        response["Content-Disposition"] = 'attachment; filename="uploads.csv"'
+
+        writer = csv.writer(response)
+        writer.writerow(["Name", "Age", "Email", "Photo URL", "Video URL"])
+
+        for u in uploads:
+            writer.writerow([
+                u.name,
+                u.age,
+                u.email,
+                u.photo.url if u.photo else "",
+                u.video.url if u.video else "",
+            ])
+
+        return response
+
+    # -------- EXCEL --------
+    if file_type == "excel":
+        wb = Workbook()
+        ws = wb.active
+        ws.title = "Uploads"
+
+        headers = ["Name", "Age", "Email", "Photo URL", "Video URL"]
+        ws.append(headers)
+
+        for u in uploads:
+            ws.append([
+                u.name,
+                u.age,
+                u.email,
+                u.photo.url if u.photo else "",
+                u.video.url if u.video else "",
+            ])
+
+        response = HttpResponse(
+            content_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        )
+        response["Content-Disposition"] = 'attachment; filename="uploads.xlsx"'
+        wb.save(response)
+
+        return response
+
+    # -------- JSON --------
+    if file_type == "json":
+        data = []
+        for u in uploads:
+            data.append({
+                "name": u.name,
+                "age": u.age,
+                "email": u.email,
+                "photo": u.photo.url if u.photo else None,
+                "video": u.video.url if u.video else None,
+            })
+
+        response = HttpResponse(
+            json.dumps(data, indent=4),
+            content_type="application/json"
+        )
+        response["Content-Disposition"] = 'attachment; filename="uploads.json"'
+        return response
+
+    return HttpResponse("Invalid file type")
+

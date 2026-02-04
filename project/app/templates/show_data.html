@@ -34,6 +34,17 @@ h2 {
     margin-bottom: 25px;
 }
 
+input, select {
+    background: #0d1117;
+    color: #e6edf3;
+}
+
+body.light-mode input,
+body.light-mode select {
+    background: #f9fafb;
+    color: #000;
+}
+
 /* ================================================= */
 /* ================== TABLE ======================== */
 /* ================================================= */
@@ -180,17 +191,189 @@ a.delete:hover { background: #f85149; }
 .edit-form-actions a:hover {
     background: #30363d;
 }
+
+/* ================= THEME TOGGLE BUTTON ================= */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 25px;
+    padding: 8px 14px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    background: #ffffff;
+    color: #000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    z-index: 9999;
+}
+
+/* ================= LIGHT MODE ================= */
+body.light-mode {
+    background: #f4f6fb;
+    color: #000;
+}
+
+body.light-mode h2 {
+    color: #1f6feb;
+}
+
+body.light-mode .table-wrapper {
+    background: #ffffff;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+body.light-mode thead {
+    background: #e5e7eb;
+}
+
+body.light-mode th,
+body.light-mode td {
+    color: #000;
+    border-bottom: 1px solid #d1d5db;
+}
+
+body.light-mode tbody tr:hover {
+    background: rgba(31, 111, 235, 0.08);
+}
+
+body.light-mode .edit-form-wrapper {
+    background: #ffffff;
+    border: 1px solid #d1d5db;
+}
+
+body.light-mode .edit-form-wrapper input {
+    background: #f9fafb;
+    color: #000;
+    border: 1px solid #d1d5db;
+}
+
+body.light-mode a.edit {
+    background: #2563eb;
+}
+
+body.light-mode a.delete {
+    background: #dc2626;
+}
+
+.download-wrapper {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+
+.download-btn {
+    padding: 10px 16px;
+    background: #1f6feb;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.download-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    margin-top: 8px;
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    min-width: 160px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    z-index: 999;
+}
+
+.download-menu a {
+    display: block;
+    padding: 10px 14px;
+    color: #e6edf3;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.download-menu a:hover {
+    background: #21262d;
+}
+
+.download-wrapper:hover .download-menu {
+    display: block;
+}
+
+/* Light mode */
+body.light-mode .download-menu {
+    background: #ffffff;
+    border: 1px solid #d1d5db;
+}
+
+body.light-mode .download-menu a {
+    color: #000;
+}
+
+
 </style>
+
+
 
 
 
 
 </head>
 <body>
+<button id="themeToggle" class="theme-toggle">🌙 Dark</button>
 
 <div class="container">
+
+<form method="GET" style="display:flex; gap:12px; justify-content:space-between; flex-wrap:wrap; margin-bottom:20px;">
+
+    <!-- SEARCH -->
+    <input
+        type="text"
+        name="q"
+        placeholder="Search by name, email or age..."
+        value="{{ query|default:'' }}"
+        style="padding:10px 14px; width:260px; border-radius:8px; border:1px solid #30363d;"
+    >
+
+    <!-- SORT -->
+    <select
+        name="sort"
+        onchange="this.form.submit()"
+        style="padding:10px 14px; border-radius:8px; border:1px solid #30363d;"
+    >
+        <option value="">Sort By</option>
+
+        <option value="name_asc" {% if sort == "name_asc" %}selected{% endif %}>Name A → Z</option>
+        <option value="name_desc" {% if sort == "name_desc" %}selected{% endif %}>Name Z → A</option>
+
+        <option value="age_asc" {% if sort == "age_asc" %}selected{% endif %}>Age Low → High</option>
+        <option value="age_desc" {% if sort == "age_desc" %}selected{% endif %}>Age High → Low</option>
+
+        <option value="email_asc" {% if sort == "email_asc" %}selected{% endif %}>Email A → Z</option>
+        <option value="email_desc" {% if sort == "email_desc" %}selected{% endif %}>Email Z → A</option>
+    </select>
+
+    <button type="submit" class="action edit">Apply</button>
+
+    <div class="download-wrapper">
+    <button class="download-btn">
+        Download ⌄
+    </button>
+
+    <div class="download-menu">
+        <a href="{% url 'download_data' 'excel' %}">📊 Excel (.xlsx)</a>
+        <a href="{% url 'download_data' 'csv' %}">📄 CSV</a>
+        <a href="{% url 'download_data' 'json' %}">🔧 JSON</a>
+    </div>
+</div>
+
+</form>
+
+
     <h2>Uploaded Data</h2>
 
+
+    
     <div class="table-wrapper">
         <table>
             <thead>
@@ -266,6 +449,9 @@ a.delete:hover { background: #f85149; }
             <button type="submit">Save Changes</button>
             <a href="{% url 'show_data' %}">Cancel</a>
         </div>
+
+
+        
     </form>
 </div>
 
@@ -273,5 +459,40 @@ a.delete:hover { background: #f85149; }
 {% endif %}
 <br>
 <button><a href="{% url 'dashboard' %}"> Back To Dashboard</a></button>
+
+<br>
+<div class="edit-form-actions">
+
+    <a href="{% url 'create_payment' %}" class="action edit">
+        Pay ₹500
+    </a>
+
+    <a href="{% url 'show_data' %}">Cancel</a>
+</div>
+
+
 </body>
+
+<script>
+const toggleBtn = document.getElementById("themeToggle");
+
+// Load saved theme on refresh
+if (localStorage.getItem("theme") === "light") {
+    document.body.classList.add("light-mode");
+    toggleBtn.textContent = "🌞 Light";
+}
+
+toggleBtn.addEventListener("click", () => {
+    document.body.classList.toggle("light-mode");
+
+    if (document.body.classList.contains("light-mode")) {
+        toggleBtn.textContent = "🌞 Light";
+        localStorage.setItem("theme", "light");
+    } else {
+        toggleBtn.textContent = "🌙 Dark";
+        localStorage.setItem("theme", "dark");
+    }
+});
+</script>
+
 </html>

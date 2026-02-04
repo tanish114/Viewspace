@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Complete Payment</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: "Segoe UI", Tahoma, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0d1117, #010409);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #e6edf3;
+        }
+
+        .pay-card {
+            background: #161b22;
+            width: 100%;
+            max-width: 420px;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+            text-align: center;
+        }
+
+        .pay-card h2 {
+            color: #58a6ff;
+            margin-bottom: 10px;
+        }
+
+        .pay-card p {
+            font-size: 14px;
+            color: #9da7b1;
+            margin-bottom: 25px;
+        }
+
+        .amount-box {
+            background: #0d1117;
+            border: 1px solid #30363d;
+            border-radius: 10px;
+            padding: 14px;
+            margin-bottom: 25px;
+            font-size: 20px;
+            color: #e6edf3;
+        }
+
+        .pay-btn {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #1f6feb, #388bfd);
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .pay-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(56,139,253,0.4);
+        }
+
+        .secure-text {
+            margin-top: 18px;
+            font-size: 12px;
+            color: #9da7b1;
+        }
+
+        .secure-text span {
+            color: #58a6ff;
+        }
+    </style>
+</head>
+<body>
+
+<div class="pay-card">
+    <h2>Complete Payment</h2>
+    <p>Secure Razorpay Test Transaction</p>
+
+    <div class="amount-box">
+        ₹ 500
+    </div>
+
+    <button id="rzp-button" class="pay-btn">
+        Pay Now
+    </button>
+
+    <div class="secure-text">
+        🔒 Secured by <span>Razorpay</span>
+    </div>
+</div>
+
+<form action="{% url 'payment_success' %}" method="POST">
+    {% csrf_token %}
+    <input type="hidden" name="razorpay_payment_id">
+    <input type="hidden" name="razorpay_order_id">
+    <input type="hidden" name="razorpay_signature">
+</form>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<script>
+var options = {
+    "key": "{{ razorpay_key }}",
+    "amount": "{{ amount }}",
+    "currency": "{{ currency }}",
+    "order_id": "{{ order_id }}",
+    "name": "ViewSpace",
+    "description": "Test Payment",
+    "theme": {
+        "color": "#1f6feb"
+    },
+    "handler": function (response){
+        document.querySelector("input[name=razorpay_payment_id]").value = response.razorpay_payment_id;
+        document.querySelector("input[name=razorpay_order_id]").value = response.razorpay_order_id;
+        document.querySelector("input[name=razorpay_signature]").value = response.razorpay_signature;
+        document.forms[0].submit();
+    }
+};
+
+var rzp = new Razorpay(options);
+document.getElementById("rzp-button").onclick = function(e){
+    rzp.open();
+    e.preventDefault();
+};
+</script>
+
+</body>
+</html>

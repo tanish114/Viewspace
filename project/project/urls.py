@@ -51,6 +51,12 @@ urlpatterns = [
     path('delete_upload/<int:pk>/',views.delete_upload,name='delete_upload'),
     # path('edit_upload/<int:pk>/',views.edit_upload,name='edit_upload'),
     path('upload_update/<int:pk>/', views.update_upload, name='update_upload'),
+    path("pay/", views.create_payment, name="create_payment"),
+    path("payment-success/", views.payment_success, name="payment_success"),
+    path("download/<str:file_type>/", views.download_data, name="download_data"),
+
+
+
 
 
 
